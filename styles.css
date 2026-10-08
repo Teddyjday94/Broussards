@@ -49,8 +49,12 @@ figcaption{font-size:15px;color:var(--muted);margin-top:10px}
 .topbar a{color:#fff;font-weight:600;text-decoration:none}
 .site-header{border-bottom:1px solid var(--line);background:var(--bg)}
 .site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-top:14px;padding-bottom:14px}
-.logo img{height:58px;width:auto}
-@media (prefers-color-scheme:dark){.logo{background:#f4f2f7;border-radius:4px;padding:4px 8px}.logo img{height:48px}}
+.logo img{height:58px;width:auto;
+  /* thin outline traced around the logo shape so it never blends into the page */
+  filter:drop-shadow(.6px 0 0 var(--logo-line)) drop-shadow(-.6px 0 0 var(--logo-line)) drop-shadow(0 .6px 0 var(--logo-line)) drop-shadow(0 -.6px 0 var(--logo-line))}
+:root{--logo-line:#1b1424}
+/* on the dark page a black line disappears, so trace it in light instead */
+@media (prefers-color-scheme:dark){:root{--logo-line:#f1eef6}}
 .site-nav{display:flex;gap:28px;font-size:17px}
 .site-nav a{position:relative;color:var(--ink);text-decoration:none;padding:4px 0}
 .site-nav a:hover{color:var(--link)}
