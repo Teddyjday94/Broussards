@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Request Service | Broussard's Cooling &amp; Heating, Sorrento LA</title>
+<meta name="description" content="Request A/C or heating service from Broussard's Cooling & Heating, or call or text (225) 428-7776. Serving within 40 miles of Sorrento, Louisiana.">
+<meta name="theme-color" content="#4a1d8c">
+<link rel="icon" href="img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+  <span class="lic">Licensed in Louisiana since 1996, License #70755</span>
+  <span>Call or text <a href="tel:+12254287776">(225) 428-7776</a></span>
+</div></div>
+
+<header class="site-header"><div class="wrap">
+  <a class="logo" href="index.html"><img src="img/logo.png" alt="Broussard's Cooling &amp; Heating, L.L.C." width="745" height="297"></a>
+  <nav class="site-nav" aria-label="Main">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="contact.html" aria-current="page">Contact</a>
+  </nav>
+  <a class="btn" href="tel:+12254287776">Call (225) 428-7776</a>
+</div></header>
+
+<main>
+
+<div class="page-head"><div class="wrap">
+  <h1>Request service</h1>
+  <p>Fill out the form and we'll get back to you to set up a time. If your A/C is out and it can't wait, call or text us.</p>
+</div></div>
+
+<section style="padding-top:44px">
+  <div class="wrap contact-layout">
+    <div class="details">
+      <div><span>Call or text</span><a href="tel:+12254287776">(225) 428-7776</a></div>
+      <div><span>Email</span><a href="mailto:broussardscooling@gmail.com">broussardscooling@gmail.com</a></div>
+      <div><span>Shop</span>5281 Highway 44, Sorrento, LA 70778</div>
+      <div><span>Hours</span>Monday to Friday. Call about weekend emergencies.</div>
+    </div>
+
+    <div>
+      <form class="request" id="request" novalidate>
+        <input class="hp" type="text" name="_company_website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="field" id="f-service">
+          <label for="service">What do you need?</label>
+          <select id="service" name="service">
+            <option value="">Choose one</option>
+            <option>A/C repair</option>
+            <option>Heating repair</option>
+            <option>New system estimate</option>
+            <option>Tune-up / maintenance plan</option>
+            <option>Ductless mini-split</option>
+            <option>Ductwork</option>
+            <option>Commercial</option>
+            <option>Something else</option>
+          </select>
+          <span class="err">Please choose one.</span>
+        </div>
+        <fieldset class="field">
+          <legend>Is your system down right now?</legend>
+          <div class="radios">
+            <label><input type="radio" name="down" value="Yes"> Yes</label>
+            <label><input type="radio" name="down" value="No" checked> No</label>
+          </div>
+        </fieldset>
+        <div class="field" id="f-desc">
+          <label for="desc">Tell us what's going on</label>
+          <textarea id="desc" name="description" placeholder="For example: the upstairs unit runs but blows warm air."></textarea>
+          <span class="err">Please add a short description.</span>
+        </div>
+        <div class="row">
+          <div class="field" id="f-name"><label for="name">Name</label><input id="name" type="text" name="name" autocomplete="name"><span class="err">Please enter your name.</span></div>
+          <div class="field" id="f-phone"><label for="phone">Phone</label><input id="phone" type="tel" name="phone" autocomplete="tel"><span class="err">Please enter a 10-digit phone number.</span></div>
+        </div>
+        <div class="row">
+          <div class="field" id="f-email"><label for="email">Email <span class="opt">(optional)</span></label><input id="email" type="email" name="email" autocomplete="email"><span class="err">That email doesn't look right.</span></div>
+          <div class="field"><label for="when">Best time to reach you</label>
+            <select id="when" name="best_time"><option>Any time</option><option>Morning</option><option>Afternoon</option><option>Evening</option></select></div>
+        </div>
+        <div class="field" id="f-addr"><label for="addr">Service address</label><input id="addr" type="text" name="address" autocomplete="street-address"><span class="err">Please enter the address.</span></div>
+        <button class="btn" type="submit" id="send">Send request</button>
+        <p class="form-note">We only use this to get back to you about your request.</p>
+      </form>
+      <div class="thanks" id="thanks" role="status" tabindex="-1">
+        <h3>Thanks, we got it.</h3>
+        <p>We'll be in touch soon. If your system is down and it can't wait, call or text us at <a href="tel:+12254287776">(225) 428-7776</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tint" id="area">
+  <div class="wrap split top">
+    <div>
+      <h2>Where we work</h2>
+      <p>We're based in Sorrento and cover about 40 miles in every direction. That includes Gonzales, Prairieville, St. Amant, Geismar, Dutchtown, Donaldsonville, Napoleonville, Port Vincent, French Settlement, Darrow, Convent, Gramercy, Lutcher, Paincourtville, Pierre Part, Labadieville, Thibodaux, Plaquemine and parts of Baton Rouge.</p>
+      <p class="muted">Not sure if you're in range? Just call and ask.</p>
+    </div>
+    <div class="map">
+      <iframe title="Map of Broussard's Cooling & Heating on Highway 44 in Sorrento, Louisiana" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=5281+Highway+44,+Sorrento,+LA+70778&z=10&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer"><div class="wrap">
+  <div><b>Broussard's Cooling &amp; Heating, L.L.C.</b>Family-owned heating and air conditioning in Sorrento, Louisiana since 2006.</div>
+  <div><b>Pages</b><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+  <div><b>Contact</b><a href="tel:+12254287776">(225) 428-7776</a><br><a href="mailto:broussardscooling@gmail.com">broussardscooling@gmail.com</a><br>5281 Highway 44<br>Sorrento, LA 70778</div>
+  <div><b>Follow</b><a href="https://www.facebook.com/broussardscoolingandheating/" target="_blank" rel="noopener">Facebook</a></div>
+  <p class="small">© <span class="yr">2026</span> Broussard's Cooling &amp; Heating, L.L.C. &nbsp;|&nbsp; Louisiana Mechanical License #70755</p>
+</div></footer>
+
+<div class="callbar">
+  <a class="btn" href="tel:+12254287776">Call (225) 428-7776</a>
+  <a class="btn plain" href="#request">Request service</a>
+</div>
+
+<script src="site.js"></script>
+</body>
+</html>

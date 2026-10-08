@@ -12,7 +12,8 @@
 <link rel="icon" href="img/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -28,214 +29,34 @@
   "aggregateRating": {"@type": "AggregateRating","ratingValue": "5.0","reviewCount": "28"}
 }
 </script>
-<style>
-:root{
-  --bg:#ffffff; --tint:#f6f4f9; --ink:#1f1b26; --muted:#5c5766; --line:#e3e0e8;
-  --brand:#4a1d8c; --brand-hover:#3b166f; --link:#4a1d8c; --gold:#e5a526;
-  --head:'Archivo',system-ui,sans-serif; --body:'Source Sans 3',system-ui,-apple-system,'Segoe UI',sans-serif;
-  color-scheme:light;
-}
-@media (prefers-color-scheme:dark){
-  :root{--bg:#16141b; --tint:#1e1b25; --ink:#ecebef; --muted:#a8a3b2; --line:#302c39;
-    --brand:#6e48c9; --brand-hover:#7d58d6; --link:#b9a3f0; color-scheme:dark}
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 18px/1.65 var(--body);-webkit-font-smoothing:antialiased}
-img{display:block;max-width:100%;height:auto}
-a{color:var(--link)}
-h1,h2,h3{font-family:var(--head);font-weight:700;line-height:1.15;margin:0;color:var(--ink)}
-h1{font-size:clamp(34px,4.2vw,50px);letter-spacing:-.01em}
-h2{font-size:clamp(28px,3vw,36px);margin-bottom:18px}
-h3{font-size:20px;margin-bottom:4px}
-p{margin:0 0 16px}
-p:last-child{margin-bottom:0}
-.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
-.narrow{max-width:720px}
-section{padding:80px 0;scroll-margin-top:80px}
-.muted{color:var(--muted)}
-figure{margin:0}
-figcaption{font-size:15px;color:var(--muted);margin-top:10px}
-.photo img{border-radius:4px;width:100%;object-fit:cover}
-
-.btn{display:inline-block;font:600 17px/1 var(--body);padding:15px 22px;border-radius:6px;text-decoration:none;border:2px solid var(--brand);background:var(--brand);color:#fff;cursor:pointer;white-space:nowrap}
-.btn:hover{background:var(--brand-hover);border-color:var(--brand-hover)}
-.btn.plain{background:transparent;color:var(--link);border-color:var(--line)}
-.btn.plain:hover{border-color:var(--link)}
-:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
-
-/* top bar + header */
-.topbar{background:var(--brand);color:#fff;font-size:15px}
-.topbar .wrap{display:flex;justify-content:space-between;gap:16px;padding-top:8px;padding-bottom:8px}
-.topbar a{color:#fff;font-weight:600;text-decoration:none}
-header{border-bottom:1px solid var(--line);background:var(--bg)}
-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-top:14px;padding-bottom:14px}
-.logo img{height:58px;width:auto}
-@media (prefers-color-scheme:dark){.logo{background:#f4f2f7;border-radius:4px;padding:4px 8px}.logo img{height:48px}}
-nav{display:flex;gap:26px;font-size:17px}
-nav a{color:var(--ink);text-decoration:none}
-nav a:hover{color:var(--link);text-decoration:underline}
-
-/* hero */
-.intro{padding:56px 0 72px}
-.intro .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
-.intro p.lede{font-size:20px;color:var(--muted);margin-top:20px}
-.intro .actions{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0 22px}
-.rating{font-size:16px;color:var(--muted)}
-.rating .stars{color:var(--gold);letter-spacing:1px}
-.intro .photo img{aspect-ratio:4/4.4;object-position:50% 35%}
-
-/* services */
-.services{border-top:1px solid var(--line)}
-.svc-layout{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:start}
-.svc-list{list-style:none;padding:0;margin:8px 0 0}
-.svc-list li{padding:20px 0;border-top:1px solid var(--line)}
-.svc-list li:first-child{border-top:0;padding-top:4px}
-.svc-list p{color:var(--muted);margin:0}
-.svc-photos{display:grid;gap:28px}
-.svc-photos .a img{aspect-ratio:4/3}
-.svc-photos .b img{aspect-ratio:4/3;object-position:50% 70%}
-.brands{margin-top:28px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:17px}
-.commercial{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center;margin-top:80px}
-.commercial .photo img{aspect-ratio:3/4;object-position:60% 30%}
-
-/* about */
-.about{background:var(--tint)}
-.about .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:start}
-.about .photo img{aspect-ratio:4/3}
-.about .facts{margin-top:28px;display:grid;grid-template-columns:auto 1fr;gap:6px 20px;font-size:17px}
-.about .facts dt{font-weight:700}
-.about .facts dd{margin:0;color:var(--muted)}
-
-/* reviews */
-blockquote{margin:0 0 36px;padding-left:22px;border-left:3px solid var(--gold);font-size:22px;line-height:1.5}
-blockquote footer{font-size:16px;color:var(--muted);margin-top:10px;background:none;border:0;padding:0}
-
-/* help */
-.help{background:var(--tint)}
-.help ol{padding-left:22px;margin:0 0 32px}
-.help li{margin-bottom:12px}
-.help li b{font-weight:700}
-
-/* maintenance */
-.maint .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
-.maint ul{padding-left:22px;margin:0 0 26px}
-.maint li{margin-bottom:6px}
-.maint .photo img{aspect-ratio:4/3;object-position:50% 60%}
-
-/* area */
-.area{border-top:1px solid var(--line)}
-.area .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
-.map{border:1px solid var(--line);border-radius:4px;overflow:hidden;aspect-ratio:4/3}
-.map iframe{width:100%;height:100%;border:0;display:block}
-
-/* contact */
-.contact{background:var(--tint)}
-.contact .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start}
-.details{margin-top:24px;font-size:18px}
-.details div{padding:12px 0;border-top:1px solid var(--line)}
-.details span{display:block;font-size:15px;color:var(--muted)}
-.details a{font-weight:600;text-decoration:none}
-.details a:hover{text-decoration:underline}
-form.request{background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:32px}
-.row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.field{margin-bottom:18px}
-.field label,.field legend{display:block;font-weight:600;font-size:16px;margin-bottom:6px;padding:0}
-.field .opt{font-weight:400;color:var(--muted)}
-fieldset.field{border:0;margin:0 0 18px;padding:0;min-width:0}
-input[type=text],input[type=tel],input[type=email],select,textarea{width:100%;font:400 17px var(--body);color:var(--ink);background:var(--bg);border:1px solid #c9c4d1;border-radius:4px;padding:11px 12px}
-@media (prefers-color-scheme:dark){input[type=text],input[type=tel],input[type=email],select,textarea{border-color:#454050}}
-input:focus,select:focus,textarea:focus{outline:2px solid var(--link);outline-offset:0;border-color:var(--link)}
-textarea{min-height:110px;resize:vertical}
-.radios{display:flex;gap:22px;flex-wrap:wrap}
-.radios label{font-weight:400;display:flex;align-items:center;gap:8px;margin:0;cursor:pointer}
-.radios input{width:18px;height:18px;accent-color:var(--brand)}
-.err{display:none;color:#b42318;font-size:15px;margin-top:5px}
-@media (prefers-color-scheme:dark){.err{color:#ff8b7d}}
-.field.bad input,.field.bad select,.field.bad textarea{border-color:#b42318}
-.field.bad .err{display:block}
-.hp{position:absolute;left:-9999px}
-.form-note{font-size:15px;color:var(--muted);margin-top:14px}
-.thanks{display:none;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:32px}
-.thanks h3{font-size:24px;margin-bottom:10px}
-
-/* faq */
-.faq details{border-top:1px solid var(--line);padding:18px 0}
-.faq details:last-of-type{border-bottom:1px solid var(--line)}
-.faq summary{cursor:pointer;font-weight:600;font-size:19px}
-.faq details p{color:var(--muted);margin:10px 0 0}
-
-/* footer */
-.site-footer{border-top:1px solid var(--line);padding:48px 0;font-size:16px;color:var(--muted)}
-.site-footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
-.site-footer b{color:var(--ink);display:block;margin-bottom:6px}
-.site-footer a{color:var(--muted)}
-.site-footer .small{grid-column:1/-1;font-size:14px;border-top:1px solid var(--line);padding-top:20px;margin-top:8px}
-
-.callbar{display:none}
-
-@media (max-width:900px){
-  nav{display:none}
-  .intro .wrap,.svc-layout,.commercial,.about .wrap,.maint .wrap,.area .wrap,.contact .wrap{grid-template-columns:1fr;gap:36px}
-  .intro .photo{order:-1}
-  .intro .photo img{aspect-ratio:4/3}
-  .commercial{margin-top:56px}
-  .commercial .photo img{aspect-ratio:4/3}
-  .site-footer .wrap{grid-template-columns:1fr 1fr}
-}
-@media (max-width:600px){
-  body{font-size:17px}
-  .wrap{padding:0 16px}
-  section{padding:56px 0}
-  .topbar .lic{display:none}
-  .topbar .wrap{justify-content:center}
-  header .btn{display:none}
-  .logo img{height:48px}
-  .intro{padding:24px 0 48px}
-  .intro .actions .btn{flex:1 1 100%;text-align:center}
-  .row{grid-template-columns:1fr;gap:0}
-  form.request,.thanks{padding:22px 18px}
-  blockquote{font-size:19px}
-  .site-footer{padding-bottom:100px}
-  .site-footer .wrap{grid-template-columns:1fr}
-  .callbar{display:flex;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:10;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:var(--bg);border-top:1px solid var(--line)}
-  .callbar .btn{flex:1;text-align:center;padding:14px 8px;font-size:16px}
-}
-</style>
 </head>
 <body>
 
-<div class="topbar">
-  <div class="wrap">
-    <span class="lic">Licensed in Louisiana since 1996, License #70755</span>
-    <span>Call or text <a href="tel:+12254287776">(225) 428-7776</a></span>
-  </div>
-</div>
+<div class="topbar"><div class="wrap">
+  <span class="lic">Licensed in Louisiana since 1996, License #70755</span>
+  <span>Call or text <a href="tel:+12254287776">(225) 428-7776</a></span>
+</div></div>
 
-<header>
-  <div class="wrap">
-    <a class="logo" href="#top"><img src="img/logo.png" alt="Broussard's Cooling &amp; Heating, L.L.C." width="745" height="297"></a>
-    <nav aria-label="Main">
-      <a href="#services">Services</a>
-      <a href="#about">About us</a>
-      <a href="#reviews">Reviews</a>
-      <a href="#area">Service area</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <a class="btn" href="#contact">Request service</a>
-  </div>
-</header>
+<header class="site-header"><div class="wrap">
+  <a class="logo" href="index.html"><img src="img/logo.png" alt="Broussard's Cooling &amp; Heating, L.L.C." width="745" height="297"></a>
+  <nav class="site-nav" aria-label="Main">
+    <a href="index.html" aria-current="page">Home</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <a class="btn" href="contact.html">Request service</a>
+</div></header>
 
-<main id="top">
+<main>
 
 <section class="intro" aria-label="Introduction">
-  <div class="wrap">
+  <div class="wrap split">
     <div>
       <h1>Heating and air conditioning from the Broussard family</h1>
       <p class="lede">Mike Broussard and his son John Michael repair, install and maintain A/C and heating systems for homes and businesses within 40 miles of Sorrento.</p>
       <div class="actions">
-        <a class="btn" href="#contact">Request service</a>
+        <a class="btn" href="contact.html">Request service</a>
         <a class="btn plain" href="tel:+12254287776">Call (225) 428-7776</a>
       </div>
       <p class="rating"><span class="stars" aria-hidden="true">★★★★★</span> 5.0 from 28 reviews. A+ rating with the BBB.</p>
@@ -250,294 +71,81 @@ textarea{min-height:110px;resize:vertical}
   </div>
 </section>
 
-<section class="services" id="services">
-  <div class="wrap">
-    <div class="svc-layout">
-      <div>
-        <h2>What we do</h2>
-        <p class="muted">We work on most makes and models, and we'll always tell you what's wrong and what it costs before we start.</p>
-        <ul class="svc-list">
-          <li><h3>A/C repair</h3><p>Warm air, a unit that won't shut off, frozen lines, water where it shouldn't be. We find the cause and fix it.</p></li>
-          <li><h3>New systems</h3><p>Replacement A/C, heat pumps and furnaces, sized for your house. We'll go over the options and prices with you first. Estimates are free.</p></li>
-          <li><h3>Heating repair</h3><p>Furnaces and heat pumps, including gas piping and safety checks before the cold weather.</p></li>
-          <li><h3>Ductless mini-splits</h3><p>A good fix for additions, garages, shops and the one room that never cools down.</p></li>
-          <li><h3>Tune-ups</h3><p>A spring and fall check-up: coils cleaned, drain flushed, electrical and refrigerant checked.</p></li>
-          <li><h3>Ductwork</h3><p>Duct repair, sealing, cleaning and sheet metal work.</p></li>
-        </ul>
-        <p class="brands">We install American Standard, Daikin, Bosch and Mitsubishi Electric equipment.</p>
-      </div>
-      <div class="svc-photos">
-        <figure class="photo a">
-          <picture><source srcset="img/install-american-standard.webp" type="image/webp"><img src="img/install-american-standard.jpg" alt="American Standard condenser on a new concrete pad beside a brick house" width="1000" height="750" loading="lazy"></picture>
-          <figcaption>A new American Standard system, set on a fresh pad.</figcaption>
-        </figure>
-        <figure class="photo b">
-          <picture><source srcset="img/install-mini-split.webp" type="image/webp"><img src="img/install-mini-split.jpg" alt="Ductless mini-split outdoor unit mounted on a brick wall" width="720" height="960" loading="lazy"></picture>
-          <figcaption>A ductless mini-split install.</figcaption>
-        </figure>
-      </div>
-    </div>
-
-    <div class="commercial">
-      <figure class="photo">
-        <picture><source srcset="img/commercial-john-michael.webp" type="image/webp"><img src="img/commercial-john-michael.jpg" alt="John Michael Broussard in a hard hat servicing a commercial wall-mount unit" width="750" height="1000" loading="lazy"></picture>
-        <figcaption>John Michael on a commercial job.</figcaption>
-      </figure>
-      <div>
-        <h2>Commercial work too</h2>
-        <p>We hold a Louisiana commercial mechanical license, so we can take care of your business as well as your house. That means offices, shops, restaurants and job-site buildings, on rooftop, wall-mount and split systems.</p>
-        <p>We can set up regular maintenance so your system gets looked at before the busy season, not in the middle of it.</p>
-        <a href="#contact" data-service="Commercial">Ask about commercial service</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="about" id="about">
-  <div class="wrap">
+<section class="rule">
+  <div class="wrap split">
     <div>
-      <h2>About us</h2>
-      <p>Mike Broussard got his start in 1990, with a year and a half at Nicholls State University. He then went through a four-year apprenticeship with Local 198 in HVAC and industrial refrigeration, working summers along the way.</p>
-      <p>He earned his Louisiana Mechanical license in 1996. In 2006 he passed further exams and opened Broussard's Cooling &amp; Heating on Highway 44 in Sorrento. He has kept up with continuing education every year since.</p>
-      <p>Today his son John Michael works alongside him as a partner. When you call, you talk to one of the two people who will actually come out and do the work.</p>
-      <dl class="facts">
-        <dt>License</dt><dd>Louisiana Mechanical #70755</dd>
-        <dt>Certified</dt><dd>Mainstream Engineering</dd>
-        <dt>BBB</dt><dd>A+ rating, no complaints</dd>
-        <dt>Shop</dt><dd>5281 Highway 44, Sorrento</dd>
-      </dl>
+      <h2>What we do</h2>
+      <p class="muted">We work on most makes and models, and we'll always tell you what's wrong and what it costs before we start.</p>
+      <ul class="cols">
+        <li>A/C repair</li>
+        <li>New systems</li>
+        <li>Heating repair</li>
+        <li>Ductless mini-splits</li>
+        <li>Tune-ups and maintenance</li>
+        <li>Ductwork</li>
+        <li>Commercial HVAC</li>
+      </ul>
+      <a class="more" href="services.html">See all services</a>
     </div>
-    <figure class="photo">
-      <picture><source srcset="img/truck-side.webp" type="image/webp"><img src="img/truck-side.jpg" alt="Broussard's Cooling & Heating service truck with the company logo and license number on the door" width="960" height="720" loading="lazy"></picture>
-      <figcaption>If you see this truck in your driveway, it's one of us.</figcaption>
+    <figure class="photo home-photo">
+      <picture><source srcset="img/install-american-standard.webp" type="image/webp"><img src="img/install-american-standard.jpg" alt="American Standard condenser on a new concrete pad beside a brick house" width="1000" height="750" loading="lazy"></picture>
+      <figcaption>A new American Standard system, set on a fresh pad.</figcaption>
     </figure>
   </div>
 </section>
 
-<section id="reviews">
+<section class="tint">
+  <div class="wrap split">
+    <figure class="photo home-photo first">
+      <picture><source srcset="img/truck-side.webp" type="image/webp"><img src="img/truck-side.jpg" alt="Broussard's Cooling & Heating service truck" width="960" height="720" loading="lazy"></picture>
+    </figure>
+    <div>
+      <h2>A family business since 2006</h2>
+      <p>Mike has been working on air conditioning since 1990 and has held his Louisiana Mechanical license since 1996. He opened Broussard's on Highway 44 in Sorrento in 2006, and today his son John Michael works alongside him as a partner.</p>
+      <p>When you call, you talk to one of the two people who will actually come out and do the work.</p>
+      <a class="more" href="about.html">Read more about us</a>
+    </div>
+  </div>
+</section>
+
+<section>
   <div class="wrap narrow">
-    <h2>What customers say</h2>
     <blockquote>
       “My elderly mother’s AC went out on a Saturday. Texted the number asking for next available appointment and was answered that they could come by that afternoon. The owner arrived and in about 20 minutes, the AC was fixed.”
       <footer>Dawn G.</footer>
     </blockquote>
-    <blockquote>
-      “We’ve had them out two different times, and they have gone above and beyond every single time for us! Highly recommended!”
-      <footer>Online review</footer>
-    </blockquote>
-    <p class="muted">We have a 5.0 average across 28 reviews. You can read more on <a href="https://www.facebook.com/broussardscoolingandheating/" target="_blank" rel="noopener">our Facebook page</a>.</p>
+    <p class="muted">We're based in Sorrento and work within about 40 miles, including Gonzales, Prairieville, St. Amant, Donaldsonville, Napoleonville and Thibodaux. <a href="contact.html#area">See our service area</a>.</p>
   </div>
 </section>
 
-<section class="help" id="help">
-  <div class="wrap narrow">
-    <h2>A/C stopped working?</h2>
-    <p>Before you call, check these. Sometimes they're all it takes.</p>
-    <ol>
-      <li><b>Thermostat.</b> Make sure it's set to cool and below the room temperature. If the screen is blank, try new batteries.</li>
-      <li><b>Breakers.</b> Check the breakers for the inside and outside units. If one trips again after you reset it, leave it off and call us.</li>
-      <li><b>Air filter.</b> A dirty filter can freeze up the coil. With our humidity, change it every one to three months.</li>
-      <li><b>Drain line.</b> If there's water standing in the drain pan, a safety switch may have shut the system off.</li>
-    </ol>
-    <h3>Should you repair it or replace it?</h3>
-    <p>A rough rule: if the system is under 10 years old, a repair usually makes sense. If it's over 12 to 15 years, has needed more than one repair lately, or still runs on R-22 freon, it's worth getting a price on a new one before you put more money into it. We'll give you both numbers and let you decide.</p>
-  </div>
-</section>
-
-<section class="maint">
+<div class="cta-band">
   <div class="wrap">
     <div>
-      <h2>Maintenance plan</h2>
-      <p>Most summer breakdowns start as small problems nobody caught in the spring. On our maintenance plan, we come out twice a year and handle the reminders for you.</p>
-      <ul>
-        <li>A/C tune-up in the spring, heating check in the fall</li>
-        <li>Priority scheduling during heat waves</li>
-        <li>A discount on repairs</li>
-        <li>Helps keep your manufacturer warranty in good standing</li>
-      </ul>
-      <a href="#contact" data-service="Tune-up / maintenance plan">Ask about the maintenance plan</a>
+      <h2>Need service?</h2>
+      <p>Send us a request, or call or text if it can't wait.</p>
     </div>
-    <figure class="photo">
-      <picture><source srcset="img/trailer-equipment.webp" type="image/webp"><img src="img/trailer-equipment.jpg" alt="Broussard's equipment trailer loaded with new system boxes" width="720" height="960" loading="lazy" style="aspect-ratio:4/3;object-position:50% 55%"></picture>
-      <figcaption>Loaded up for an install.</figcaption>
-    </figure>
-  </div>
-</section>
-
-<section class="area" id="area">
-  <div class="wrap">
-    <div>
-      <h2>Where we work</h2>
-      <p>We're based in Sorrento and cover about 40 miles in every direction. That includes Gonzales, Prairieville, St. Amant, Geismar, Dutchtown, Donaldsonville, Napoleonville, Port Vincent, French Settlement, Darrow, Convent, Gramercy, Lutcher, Paincourtville, Pierre Part, Labadieville, Thibodaux, Plaquemine and parts of Baton Rouge.</p>
-      <p class="muted">Not sure if you're in range? Just call and ask.</p>
-    </div>
-    <div class="map">
-      <iframe title="Map of Broussard's Cooling & Heating on Highway 44 in Sorrento, Louisiana" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=5281+Highway+44,+Sorrento,+LA+70778&z=10&output=embed"></iframe>
+    <div class="actions">
+      <a class="btn" href="contact.html">Request service</a>
+      <a class="btn plain" href="tel:+12254287776">Call (225) 428-7776</a>
     </div>
   </div>
-</section>
-
-<section class="contact" id="contact">
-  <div class="wrap">
-    <div>
-      <h2>Request service</h2>
-      <p>Fill out the form and we'll get back to you to set up a time. If your A/C is out and it can't wait, call or text us.</p>
-      <div class="details">
-        <div><span>Call or text</span><a href="tel:+12254287776">(225) 428-7776</a></div>
-        <div><span>Email</span><a href="mailto:broussardscooling@gmail.com">broussardscooling@gmail.com</a></div>
-        <div><span>Shop</span>5281 Highway 44, Sorrento, LA 70778</div>
-        <div><span>Hours</span>Monday to Friday. Call about weekend emergencies.</div>
-      </div>
-    </div>
-
-    <div>
-      <form class="request" id="request" novalidate>
-        <input class="hp" type="text" name="_company_website" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <div class="field" id="f-service">
-          <label for="service">What do you need?</label>
-          <select id="service" name="service">
-            <option value="">Choose one</option>
-            <option>A/C repair</option>
-            <option>Heating repair</option>
-            <option>New system estimate</option>
-            <option>Tune-up / maintenance plan</option>
-            <option>Ductless mini-split</option>
-            <option>Ductwork</option>
-            <option>Commercial</option>
-            <option>Something else</option>
-          </select>
-          <span class="err">Please choose one.</span>
-        </div>
-        <fieldset class="field">
-          <legend>Is your system down right now?</legend>
-          <div class="radios">
-            <label><input type="radio" name="down" value="Yes"> Yes</label>
-            <label><input type="radio" name="down" value="No" checked> No</label>
-          </div>
-        </fieldset>
-        <div class="field" id="f-desc">
-          <label for="desc">Tell us what's going on</label>
-          <textarea id="desc" name="description" placeholder="For example: the upstairs unit runs but blows warm air."></textarea>
-          <span class="err">Please add a short description.</span>
-        </div>
-        <div class="row">
-          <div class="field" id="f-name"><label for="name">Name</label><input id="name" type="text" name="name" autocomplete="name"><span class="err">Please enter your name.</span></div>
-          <div class="field" id="f-phone"><label for="phone">Phone</label><input id="phone" type="tel" name="phone" autocomplete="tel"><span class="err">Please enter a 10-digit phone number.</span></div>
-        </div>
-        <div class="row">
-          <div class="field" id="f-email"><label for="email">Email <span class="opt">(optional)</span></label><input id="email" type="email" name="email" autocomplete="email"><span class="err">That email doesn't look right.</span></div>
-          <div class="field"><label for="when">Best time to reach you</label>
-            <select id="when" name="best_time"><option>Any time</option><option>Morning</option><option>Afternoon</option><option>Evening</option></select></div>
-        </div>
-        <div class="field" id="f-addr"><label for="addr">Service address</label><input id="addr" type="text" name="address" autocomplete="street-address"><span class="err">Please enter the address.</span></div>
-        <button class="btn" type="submit" id="send">Send request</button>
-        <p class="form-note">We only use this to get back to you about your request.</p>
-      </form>
-      <div class="thanks" id="thanks" role="status" tabindex="-1">
-        <h3>Thanks, we got it.</h3>
-        <p>We'll be in touch soon. If your system is down and it can't wait, call or text us at <a href="tel:+12254287776">(225) 428-7776</a>.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="faq" id="faq">
-  <div class="wrap narrow">
-    <h2>Questions people ask us</h2>
-    <details><summary>Do you work on my brand?</summary><p>Most likely, yes. We service most makes and models of central air, heat pumps, furnaces and ductless systems.</p></details>
-    <details><summary>How often should my A/C be serviced?</summary><p>Twice a year is best here: in spring before the heat, and in fall before you switch over to heat. Systems in south Louisiana run almost all year, so they wear out faster.</p></details>
-    <details><summary>My system uses R-22 freon. Is that a problem?</summary><p>R-22 was phased out in 2020, so what's left is limited and expensive. If an R-22 system starts leaking, replacing it is often the better deal. We'll price out both options for you.</p></details>
-    <details><summary>Do you charge for estimates on new systems?</summary><p>No. We'll come look at the house, figure out the right size, and go over options and prices before anything is done.</p></details>
-  </div>
-</section>
+</div>
 
 </main>
 
-<footer class="site-footer">
-  <div class="wrap">
-    <div>
-      <b>Broussard's Cooling &amp; Heating, L.L.C.</b>
-      Family-owned heating and air conditioning in Sorrento, Louisiana since 2006.
-    </div>
-    <div>
-      <b>Contact</b>
-      <a href="tel:+12254287776">(225) 428-7776</a><br>
-      <a href="mailto:broussardscooling@gmail.com">broussardscooling@gmail.com</a><br>
-      5281 Highway 44, Sorrento, LA 70778
-    </div>
-    <div>
-      <b>Follow</b>
-      <a href="https://www.facebook.com/broussardscoolingandheating/" target="_blank" rel="noopener">Facebook</a>
-    </div>
-    <p class="small">© <span id="yr">2026</span> Broussard's Cooling &amp; Heating, L.L.C. &nbsp;|&nbsp; Louisiana Mechanical License #70755</p>
-  </div>
-</footer>
+<footer class="site-footer"><div class="wrap">
+  <div><b>Broussard's Cooling &amp; Heating, L.L.C.</b>Family-owned heating and air conditioning in Sorrento, Louisiana since 2006.</div>
+  <div><b>Pages</b><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+  <div><b>Contact</b><a href="tel:+12254287776">(225) 428-7776</a><br><a href="mailto:broussardscooling@gmail.com">broussardscooling@gmail.com</a><br>5281 Highway 44<br>Sorrento, LA 70778</div>
+  <div><b>Follow</b><a href="https://www.facebook.com/broussardscoolingandheating/" target="_blank" rel="noopener">Facebook</a></div>
+  <p class="small">© <span class="yr">2026</span> Broussard's Cooling &amp; Heating, L.L.C. &nbsp;|&nbsp; Louisiana Mechanical License #70755</p>
+</div></footer>
 
 <div class="callbar">
   <a class="btn" href="tel:+12254287776">Call (225) 428-7776</a>
-  <a class="btn plain" href="#contact">Request service</a>
+  <a class="btn plain" href="contact.html">Request service</a>
 </div>
 
-<script>
-/* Paste a Formspree or Web3Forms endpoint here to have requests emailed to
-   broussardscooling@gmail.com. Left empty, the form just shows the thank-you message. */
-const FORM_ENDPOINT = "";
-
-document.getElementById('yr').textContent = new Date().getFullYear();
-
-(function () {
-  const form = document.getElementById('request');
-  const thanks = document.getElementById('thanks');
-  const f = form.elements;
-
-  // Links like "Ask about commercial service" fill in the service type
-  document.querySelectorAll('[data-service]').forEach(a => a.addEventListener('click', () => {
-    f.service.value = a.dataset.service;
-    document.getElementById('f-service').classList.remove('bad');
-  }));
-
-  f.phone.addEventListener('input', e => {
-    const d = e.target.value.replace(/\D/g, '').replace(/^1/, '').slice(0, 10);
-    e.target.value = d.length > 6 ? `(${d.slice(0,3)}) ${d.slice(3,6)}-${d.slice(6)}` : d.length > 3 ? `(${d.slice(0,3)}) ${d.slice(3)}` : d;
-  });
-  form.addEventListener('input', e => { const fld = e.target.closest('.field'); if (fld) fld.classList.remove('bad'); });
-
-  function check() {
-    const bad = {
-      'f-service': !f.service.value,
-      'f-desc': f.description.value.trim().length < 3,
-      'f-name': f.name.value.trim().length < 2,
-      'f-phone': f.phone.value.replace(/\D/g, '').replace(/^1/, '').length !== 10,
-      'f-email': f.email.value.trim() !== '' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.email.value.trim()),
-      'f-addr': f.address.value.trim().length < 5
-    };
-    Object.entries(bad).forEach(([id, isBad]) => document.getElementById(id).classList.toggle('bad', isBad));
-    const first = form.querySelector('.field.bad input, .field.bad select, .field.bad textarea');
-    if (first) first.focus();
-    return !first;
-  }
-
-  form.addEventListener('submit', async e => {
-    e.preventDefault();
-    if (!check() || f._company_website.value) return;
-    const data = Object.fromEntries(new FormData(form)); delete data._company_website;
-    const btn = document.getElementById('send');
-    btn.disabled = true; btn.textContent = 'Sending...';
-    try {
-      if (FORM_ENDPOINT) {
-        const r = await fetch(FORM_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify({ _subject: 'Service request: ' + data.service, ...data }) });
-        if (!r.ok) throw new Error('send failed');
-      }
-      form.style.display = 'none';
-      thanks.style.display = 'block';
-      thanks.focus();
-    } catch (err) {
-      alert("Sorry, that didn't go through. Please call or text us at (225) 428-7776.");
-    } finally {
-      btn.disabled = false; btn.textContent = 'Send request';
-    }
-  });
-})();
-</script>
+<script src="site.js"></script>
 </body>
 </html>
