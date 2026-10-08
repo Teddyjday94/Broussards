@@ -4,6 +4,46 @@ const FORM_ENDPOINT = "";
 
 document.querySelectorAll('.yr').forEach(el => el.textContent = new Date().getFullYear());
 
+const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// Gold bar under the current page's menu link. It has a view-transition-name,
+// so moving between pages slides it from the old link to the new one.
+const current = document.querySelector('.site-nav a[aria-current="page"]');
+if (current) current.appendChild(Object.assign(document.createElement('span'), { className: 'nav-bar' }));
+
+// Fade the map in once it has loaded instead of popping in
+document.querySelectorAll('.map iframe').forEach(fr => {
+  const show = () => fr.classList.add('loaded');
+  fr.addEventListener('load', show);
+  setTimeout(show, 4000);
+});
+
+// Scroll reveal: content eases up into place as it comes on screen.
+// Items that arrive together are staggered so they read in order.
+(function () {
+  if (reduceMotion || !('IntersectionObserver' in window)) return;
+  const selector = [
+    'main h1', 'main h2', '.page-head p', '.lede', '.intro .actions', '.rating',
+    '.photo', '.svc-list li', '.cols', '.brands', 'blockquote', '.facts',
+    '.help ol > li', '.maint ul', '.faq details', '.details > div', 'form.request',
+    '.map', 'main section p', '.more', 'main h3', '.cta-band .wrap > *'
+  ].join(',');
+  const els = [...document.querySelectorAll(selector)].filter(el => !el.parentElement.closest('.reveal, .thanks') && (el.classList.add('reveal'), true));
+  let fired = false;
+  const io = new IntersectionObserver(entries => {
+    fired = true;
+    const arriving = entries.filter(e => e.isIntersecting).map(e => e.target);
+    arriving.forEach((el, i) => {
+      el.style.setProperty('--d', Math.min(i * 0.07, 0.42) + 's');
+      io.unobserve(el);
+    });
+    setTimeout(() => arriving.forEach(el => el.classList.add('in')), 20);
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(el => io.observe(el));
+  // Safety net: never leave content hidden if the observer doesn't report in
+  setTimeout(() => { if (!fired) { io.disconnect(); els.forEach(el => el.classList.add('in')); } }, 1500);
+})();
+
 (function () {
   const form = document.getElementById('request');
   if (!form) return;
@@ -29,7 +69,14 @@ document.querySelectorAll('.yr').forEach(el => el.textContent = new Date().getFu
       'f-email': f.email.value.trim() !== '' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.email.value.trim()),
       'f-addr': f.address.value.trim().length < 5
     };
-    Object.entries(bad).forEach(([id, isBad]) => document.getElementById(id).classList.toggle('bad', isBad));
+    Object.entries(bad).forEach(([id, isBad]) => {
+      const fld = document.getElementById(id);
+      fld.classList.toggle('bad', isBad);
+      if (isBad) { // small shake so the problem field is easy to spot
+        fld.classList.remove('nudge'); void fld.offsetWidth; fld.classList.add('nudge');
+        fld.addEventListener('animationend', () => fld.classList.remove('nudge'), { once: true });
+      }
+    });
     const first = form.querySelector('.field.bad input, .field.bad select, .field.bad textarea');
     if (first) first.focus();
     return !first;
@@ -48,6 +95,7 @@ document.querySelectorAll('.yr').forEach(el => el.textContent = new Date().getFu
       }
       form.style.display = 'none';
       thanks.style.display = 'block';
+      thanks.classList.add('show');
       thanks.focus();
     } catch (err) {
       alert("Sorry, that didn't go through. Please call or text us at (225) 428-7776.");
